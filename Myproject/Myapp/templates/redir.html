@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order</title>
+        {% load static %}
+    <link href="{% static 'web/css/style.css' %}" rel='stylesheet' type='text/css' />
+    <link href="//fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i" rel="stylesheet">
+</head>
+<body>
+<form method="post" action="http://127.0.0.1:8000/order/">{% csrf_token %}
+<div style="display:grid;grid-template-columns:auto auto auto auto;">
+{% for ItemName,ItemPrice,ItemImage in Name %}
+<a href="http://127.0.0.1:8000/order/{{ ItemName }}"><Div style="background:rgba(255,255,255,.7);box-shadow:2px black;padding:50px 3px 50px 8px;margin:4px;border-radius:10px;">
+    <center>
+    <div><img src="{% static ItemImage %}" height="150px" width="200px" style="margin:10px;"></div>
+    <div><h3>{{ ItemName }}</h3></div>
+    <div><h2>Rs.{{ ItemPrice }}</h2></div>
+    </center>
+</Div></a>
+{% endfor %}
+</div></form>
+<div style="background:rgba(255,255,255,.8);width:100%;padding:20px;display:flex;margin:50px 5px 5px 5px;display:grid;grid-template-columns:auto auto auto;">
+    <div style="margin:10px;">Facebook</div>
+    <div style="margin:10px;">Instagram</div>
+</body>
+</html>

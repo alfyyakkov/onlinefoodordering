@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Orders</title>
+    <style>
+        ul{
+            list-style-type:none;
+            margin:none;
+            padding:none;
+            overflow:hidden;
+            background:white;
+            width:40%;
+        }
+        li{
+            margin:none;
+            padding:none;
+            border:5px solid cyan;
+            width:48%;
+            background:cyan;
+        }
+        li a{
+            display:block;
+            padding:10px 0px;
+            margin:none;
+            text-align: center;
+            width:100%;
+        }
+        li:hover{
+            background: cyan;
+            opacity: .9;
+        }
+    </style>
+</head>
+<body>
+    <center><ul>
+        <li style="float:left;background: white;border-top-left-radius: 80px;border-bottom-left-radius: 8px;"><a href="http://127.0.0.1:8000/items/" style="text-decoration:none;color:black;">View items</a></li>
+        <li style="float:left;border-top-right-radius:80px;border-bottom-right-radius: 8px;"><a href="http://127.0.0.1:8000/orders" style="text-decoration:none;color:black;">View Orders</a></li>
+    </ul></center>
+<center> 
+<center><div style="width:50%;display:grid;padding:20px;">
+   {% for Name,Price,Quantity,Total in Orders %}
+    <div style="border:2px solid rgba(0,0,0,.5);height:200px;margin:15px;border-radius:10px;padding:20px">
+        <table width="70%" height="100%">
+            <tr><th>Name</th><td>:&nbsp;&nbsp;{{ Name }}</td></tr>
+            <tr><th>Price</th><td>:&nbsp;&nbsp;{{ Price }}</td></tr>
+            <tr><th>Quantity</th><td>:&nbsp;&nbsp;{{ Quantity }}</td></tr>
+            <tr><th>Total</th><td>:&nbsp;&nbsp;{{ Total }}</td></tr>
+        </table>
+    </div>
+    {% endfor %}
+</div></center>
+</body>
+</html>

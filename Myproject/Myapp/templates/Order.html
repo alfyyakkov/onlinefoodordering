@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order Item</title>
+</head>
+<body>
+<div width="100px" height="100px" style="border:1px solid rgba(0,0,0,.3);padding=15px;">
+    <center><div ><img src="/static/{{ Url }}" height="250" width="250"></div>
+    <div><form method="post">{% csrf_token %}<table>
+        <tr><th>Name&nbsp;&nbsp;&nbsp;</th><td>:&nbsp;&nbsp;&nbsp;<input type="text" value="{{ Name }}" name="Name" readonly></td></tr>
+        <tr><th>Price&nbsp;&nbsp;&nbsp;</th><td>:&nbsp;&nbsp;&nbsp;<input type="text" value="{{ Price }}" name="Price" readonly></td></tr>
+        <tr><th>Quatity&nbsp;&nbsp;&nbsp;</th><td>:&nbsp;&nbsp;&nbsp;<input type="text" value="1" name="Quatity"></td></tr>
+        <tr><td></td><th><input type="submit" value="Buy now"></th></tr>
+    </table></form></div></center>
+</div>
+</body>
+</html>
